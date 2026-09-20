@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Recipes - RecipeShare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>🍴 RecipeShare</h2>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="my-recipes.html">My Recipes</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="login.html">Login</a>
+    </div>
+</nav>
+
+<section class="page">
+
+    <h1>All Recipes 🍽️</h1>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="Search recipe..."
+        onkeyup="searchRecipes()"
+    >
+
+    <select id="category" onchange="filterRecipes()">
+        <option value="all">All Categories</option>
+        <option value="Pakistani">Pakistani</option>
+        <option value="Italian">Italian</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Desserts">Desserts</option>
+        <option value="Fast Food">Fast Food</option>
+        <option value="Healthy">Healthy</option>
+    </select>
+
+    <div class="recipe-container">
+
+        <div class="recipe-card">
+            <div class="recipe-image">🍛</div>
+            <h2>Chicken Biryani</h2>
+            <p>Pakistani</p>
+            <p>⏱ 45 Minutes</p>
+            <a href="recipe-details.html" class="btn">View Recipe</a>
+        </div>
+
+        <div class="recipe-card">
+            <div class="recipe-image">🍝</div>
+            <h2>Chicken Pasta</h2>
+            <p>Italian</p>
+            <p>⏱ 30 Minutes</p>
+            <a href="recipe-details.html" class="btn">View Recipe</a>
+        </div>
+
+        <div class="recipe-card">
+            <div class="recipe-image">🍰</div>
+            <h2>Chocolate Cake</h2>
+            <p>Desserts</p>
+            <p>⏱ 50 Minutes</p>
+            <a href="recipe-details.html" class="btn">View Recipe</a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 RecipeShare | SMIT Batch 17</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

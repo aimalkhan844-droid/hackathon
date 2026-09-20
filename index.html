@@ -1,464 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<link>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"></link>
-    <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></link>
-</head>
-<body>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RecipeShare</title>
-    
+    <meta name="viewport" content="width=<!DOCTYPE html>
+    <html>
+    </head>
+        <title>"RecipeShare"</title>
         <link rel="stylesheet" href="style.css">
     </head>
     
     <body>
     
-        <!-- ================= AUTH SECTION ================= -->
+    <nav>
+        <h2>🍴 RecipeShare</h2>
     
-        <div id="authSection" class="auth-container">
+        <div>
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="my-recipes.html">My Recipes</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
     
-            <!-- Login -->
-            <div id="loginBox" class="auth-box">
+    <section class="hero">
+        <h1>Share Your Favorite Recipes 🍳</h1>
     
-                <h1>🍴 RecipeShare</h1>
-                <h2>Login</h2>
-                <p class="subtitle">Welcome back!</p>
+        <p>
+            Discover delicious recipes and share your favorite
+            dishes with everyone.
+        </p>
     
-                <form id="loginForm">
+        <a href="recipes.html" class="btn">Explore Recipes</a>
+        <a href="create-recipe.html" class="btn">Share Recipe</a>
+    </section>
     
-                    <div class="input-group">
-                        <label>Email</label>
-                        <input type="email" id="loginEmail" required>
-                    </div>
+    <section class="categories">
     
-                    <div class="input-group">
-                        <label>Password</label>
-                        <input type="password" id="loginPassword" required>
-                    </div>
+        <h2>Recipe Categories</h2>
     
-                    <button type="submit" class="primary-btn">
-                        Login
-                    </button>
-    
-                </form>
-    
-                <p class="switch-text">
-                    Don't have an account?
-                    <button type="button" onclick="showSignup()">
-                        Sign Up
-                    </button>
-                </p>
-    
-            </div>
-    
-    
-            <!-- Signup -->
-            <div id="signupBox" class="auth-box hidden">
-    
-                <h1>🍴 RecipeShare</h1>
-                <h2>Create Account</h2>
-                <p class="subtitle">Join our recipe community</p>
-    
-                <form id="signupForm">
-    
-                    <div class="input-group">
-                        <label>Name</label>
-                        <input type="text" id="signupName" required>
-                    </div>
-    
-                    <div class="input-group">
-                        <label>Email</label>
-                        <input type="email" id="signupEmail" required>
-                    </div>
-    
-                    <div class="input-group">
-                        <label>Password</label>
-                        <input type="password" id="signupPassword" required>
-                    </div>
-    
-                    <button type="submit" class="primary-btn">
-                        Sign Up
-                    </button>
-    
-                </form>
-    
-                <p class="switch-text">
-                    Already have an account?
-                    <button type="button" onclick="showLogin()">
-                        Login
-                    </button>
-                </p>
-    
-            </div>
-    
+        <div class="category-box">
+            <div>🇵🇰 Pakistani</div>
+            <div>🍝 Italian</div>
+            <div>🥡 Chinese</div>
+            <div>🍰 Desserts</div>
+            <div>🍔 Fast Food</div>
+            <div>🥗 Healthy</div>
         </div>
     
-    
-        <!-- ================= DASHBOARD ================= -->
-    
-        <!--  <div id="dashboard" class="hidden"> -->
-    
-          <h1>Navbar</h1> 
-            <nav class="navbar">
-    
-                <div class="logo">
-                    🍴 RecipeShare
-                </div>
-    
-                <div class="nav-right">
-                    <span id="navUsername"></span>
-    
-                    <button onclick="logout()" class="logout-btn">
-                        Logout
-                    </button>
-                </div>
-    
-            </nav>
-    
-    
-             <!-- Main -->
-            <main class="container">
-    
-                <div class="welcome-section">
-    
-                    <div>
-                        <h1>
-                            Welcome, <span id="welcomeName"></span>! 👋
-                        </h1>
-    
-                        <p>
-                            Discover and share delicious recipes.
-                        </p>
-                    </div>
-    
-                    <button class="add-btn" onclick="openRecipeModal()">
-                        + Add Recipe
-                    </button>
-    
-                </div>
-    
-    
-                <!-- Statistics -->
-    
-                <div class="stats">
-    
-                    <div class="stat-card">
-                        <div class="start-icon">🍲</div>
-    
-                        <div>
-                            <h3 id="totalRecipes">0</h3>
-                            <p>Total Recipes</p>
-                        </div>
-                    </div>
-    
-                    <div class="stat-card">
-                        <div class="stat-icon">⭐</div>
-    
-                        <div>
-                            <h3 id="recentRecipes">0</h3>
-                            <p>Recent Recipes</p>
-                        </div>
-                    </div>
-    
-                    <div class="stat-card">
-                        <div class="stat-icon"></div>
-    
-                        <div>
-                            <h3 id="categoryCount">0</h3>
-                            <p>Categories</p>
-                        </div>
-                    </div>
-    
-                </div> 
-    
-    
-                <!-- Recipes -->
-    
-                <section class="recipes-section">
-    
-                    <div class="section-heading">
-                        <h2>Recent Recipes</h2>
-    
-                        <select id="categoryFilter" onchange="displayRecipes()">
-                            <option value="all">All Categories</option>
-                            <option value="Breakfast">Breakfast</option>
-                            <option value="Lunch">Lunch</option>
-                            <option value="Dinner">Dinner</option>
-                            <option value="Dessert">Dessert</option>
-                            <option value="Snacks">Snacks</option>
-                        </select>
-                    </div>
-    
-                    <div id="recipeList" class="recipe-grid">
-                        <!-- Recipes appear here -->
-                    </div>
-    
-                    <div id="emptyMessage" class="empty-message">
-                        <div>🍳</div>
-                        <h3>No recipes yet</h3>
-                        <p>Click "Add Recipe" to share your first recipe.</p>
-                    </div>
-    
-                </section>
-    
-            </main>
-    
-        </div>
-    
-    
-        <!-- ================= RECIPE MODAL ================= -->
-    
-        <div id="recipeModal" class="modal hidden">
-    
-            <div class="modal-content">
-    
-                <div class="modal-header">
-    
-                    <h2>Add New Recipe</h2>
-    
-                    <button onclick="closeRecipeModal()" class="close-btn">
-                        
-                    </button>
-    
-                </div>
-    
-    
-                <form id="recipeForm">
-    
-                    <div class="form-row">
-    
-                        <div class="input-group">
-                            <label>Recipe Title</label>
-    
-                            <input
-                                type="text"
-                                id="recipeTitle"
-                                placeholder="e.g. Chicken Biryani"
-                                required
-                            >
-                        </div>
-    
-    
-                        <div class="input-group">
-    
-                            <label>Category</label>
-    
-                            <select id="recipeCategory" required>
-    
-                                <option value="">
-                                    Select Category
-                                </option>
-    
-                                <option value="Breakfast">
-                                    Breakfast
-                                </option>
-    
-                                <option value="Lunch">
-                                    Lunch
-                                </option>
-    
-                                <option value="Dinner">
-                                    Dinner
-                                </option>
-    
-                                <option value="Dessert">
-                                    Dessert
-                                </option>
-    
-                                <option value="Snacks">
-                                    Snacks
-                                </option>
-    
-                            </select>
-    
-                        </div>
-    
-                    </div>
-    
-    
-                    <div class="input-group">
-    
-                        <label>Description</label>
-    
-                        <textarea
-                            id="recipeDescription"
-                            rows="3"
-                            placeholder="Describe your recipe..."
-                            required
-                        ></textarea>
-    
-                    </div>
-    
-    
-                    <div class="input-group">
-    
-                        <label>Ingredients</label>
-    
-                        <textarea
-                            id="recipeIngredients"
-                            rows="5"
-                            placeholder="Write each ingredient on a new line..."
-                            required
-                        ></textarea>
-    
-                    </div>
-    
-    
-                    <div class="input-group">
-    
-                        <label>Instructions</label>
-    
-                        <textarea
-                            id="recipeInstructions"
-                            rows="6"
-                            placeholder="Write cooking instructions..."
-                            required
-                        ></textarea>
-    
-                    </div>
-    
-    
-                    <div class="form-row">
-    
-                        <div class="input-group">
-    
-                            <label>Cooking Time</label>
-    
-                            <input
-                                type="text"
-                                id="cookingTime"
-                                placeholder="e.g. 45 minutes"
-                                required
-                            >
-    
-                        </div>
-    
-    
-                        <div class="input-group">
-    
-                            <label>Recipe Image</label>
-    
-                            <input
-                                type="file"
-                                id="recipeImage"
-                                accept="image/*"
-                            >
-    
-                        </div>
-    
-                    </div>
-    
-    
-                    <div class="form-buttons">
-    
-                        <button
-                            type="button"
-                            onclick="closeRecipeModal()"
-                            class="cancel-btn"
-                        >
-                            Cancel
-                        </button>
-    
-                        <button
-                            type="submit"
-                            class="primary-btn"
-                        >
-                            Add Recipe
-                        </button>
-    
-                    </div>
-    
-                </form>
-    
-            </div>
-    
-        </div>
-    
-    
-        <!-- ================= RECIPE DETAILS MODAL ================= -->
-    
-        <div id="detailsModal" class="modal hidden">
-    
-            <div class="modal-content details-content">
-    
-                <button
-                    onclick="closeDetailsModal()"
-                    class="close-btn details-close"
-                >
-                    
-                </button>
-    
-                <img id="detailsImage" class="details-image">
-    
-                <div class="details-body">
-    
-                    <span id="detailsCategory" class="category-badge"></span>
-    
-                    <h2 id="detailsTitle"></h2>
-    
-                    <p id="detailsDescription"></p>
-    
-                    <hr>
-    
-                    <h3>Ingredients</h3>
-    
-                    <ul id="detailsIngredients"></ul>
-    
-                    <h3>Instructions</h3>
-    
-                    <p id="detailsInstructions"></p>
-    
-                    <div class="cooking-time">
-                         Cooking Time:
-                        <strong id="detailsTime"></strong>
-                    </div>
-    
-                </div>
-    
-            </div>
-    
-        </div>
-    
-    
-        <script src="script.js"></script>
+    </section>
+    
+    <section class="about">
+        <h2>About RecipeShare</h2>
+    
+        <p>
+            RecipeShare is a simple platform where people can
+            discover, create and share delicious recipes.
+        </p>
+    </section>
+    
+    <footer>
+        <p>© 2026 RecipeShare | SMIT Batch 17</p>
+    </footer>
     
     </body>
-    </html>
-    <!-- <div class="auth-box">
-      <h2 id="formTitle">Login</h2>
-      <input id="email" type="email" placeholder="Email">
-      <input id="password" type="password" placeholder="Password">
-      <button id="authBtn">Login</button>
-      <p><a href="signup.html">Create Account</a> | <a href="login.html">Login</a></p>
-    </div>
-  
-<input id="searchInput" placeholder="Search by title... (Biryani)">
-<select id="categoryFilter">
-  <option value="all">All Categories</option>
-  <option>Pakistani</option>
-  <option>Italian</option>
-  <option>Chinese</option> -->
-  <!-- <option>Desserts</option>
-  <option>Fast Food</option>
-  <option>Healthy</option>
-</select>
-
-
-
- -->
-
-
-
-
- <script src="app.js"></script>;
- <script src="./style.css"></script>
+    </html>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
 </body>
 </html>

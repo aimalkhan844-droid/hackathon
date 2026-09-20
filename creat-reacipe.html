@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Recipe - RecipeShare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>🍴 RecipeShare</h2>
+
+    <a href="dashboard.html">Dashboard</a>
+</nav>
+
+<div class="form-container">
+
+    <h1>Create New Recipe 🍳</h1>
+
+    <form onsubmit="addRecipe(event)">
+
+        <label>Recipe Title</label>
+        <input type="text" id="recipeTitle" required>
+
+        <label>Description</label>
+        <textarea id="description" required></textarea>
+
+        <label>Category</label>
+
+        <select id="recipeCategory" required>
+
+            <option value="">Select Category</option>
+            <option>Pakistani</option>
+            <option>Italian</option>
+            <option>Chinese</option>
+            <option>Desserts</option>
+            <option>Fast Food</option>
+            <option>Healthy</option>
+
+        </select>
+
+        <label>Ingredients</label>
+        <textarea id="ingredients" required></textarea>
+
+        <label>Instructions</label>
+        <textarea id="instructions" required></textarea>
+
+        <label>Cooking Time</label>
+        <input type="text" id="cookingTime" placeholder="Example: 30 Minutes">
+
+        <label>Recipe Image</label>
+        <input type="file">
+
+        <button type="submit">Add Recipe</button>
+
+    </form>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
